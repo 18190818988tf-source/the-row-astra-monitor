@@ -1,0 +1,56 @@
+name: Multi-brand stock monitor
+on:
+  workflow_dispatch:
+    inputs:
+      test_push:
+        description: 'Send a Bark test push only'
+        required: false
+        default: false
+        type: boolean
+      dry_run:
+        description: 'Only query inventory; no notifications or state changes'
+        required: false
+        default: true
+        type: boolean
+  schedule:
+    # 5-minute target, NOT guaranteed: GitHub can delay or omit scheduled runs.
+    - cron: '2-59/5 * * * *'
+permissions:
+  contents: write
+concurrency:
+  group: multi-brand-stock-monitor
+  cancel-in-progress: false
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v4
+      - name: Python and unit tests
+        run: python3 -m unittest discover -s tests -v
+      - name: Check configured products
+        env:
+          BARK_PUSH_URL: ${{ secrets.BARK_PUSH_URL }}
+          HC_PING_URL: ${{ secrets.HC_PING_URL }}
+          TEST_PUSH: ${{ inputs.test_push }}
+          DRY_RUN: ${{ inputs.dry_run }}
+          EVENT_NAME: ${{ github.event_name }}
+        run: |
+          # Scheduled runs are real checks, manual runs default to safe dry run.
+          if [[ "$TEST_PUSH" == 'true' ]]; then
+            python3 monitor.py --test-push
+          elif [[ "$EVENT_NAME" == 'workflow_dispatch' && "$DRY_RUN" != 'false' ]]; then
+            python3 monitor.py --dry-run
+          else
+            python3 monitor.py
+          fi
+      - name: Persist stock state when changed
+        if: ${{ always() && (github.event_name == 'schedule' || (inputs.dry_run == false && inputs.test_push == false)) }}
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add state.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'chore: persist stock state [skip ci]'
+            git push
+          fi
