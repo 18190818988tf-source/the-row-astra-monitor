@@ -1,4 +1,10 @@
 {
-  "schema_version": 1,
-  "products": {}
+  "products": {
+    "the-row-astra-black-one-size": {
+      "last_reliable": "out_of_stock",
+      "notified_in_stock": false,
+      "unknown_streak": 0
+    }
+  },
+  "schema_version": 1
 }
