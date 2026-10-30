@@ -11,6 +11,42 @@
         "astra-pouch-nuez-ans"
       ],
       "enabled": true
+    },
+    {
+      "id": "arcteryx-outlet-beta-womens-solitude-xs",
+      "brand": "Arc'teryx Outlet",
+      "name": "Beta Jacket Women's",
+      "url": "https://outlet.arcteryx.com/us/en/shop/womens/beta-jacket-0516",
+      "adapter": "jsonld_product",
+      "product_group_id": "X000010516",
+      "sku": "X000010516037",
+      "color": "Solitude",
+      "size": "XS",
+      "enabled": true
+    },
+    {
+      "id": "arcteryx-outlet-beta-womens-solitude-s",
+      "brand": "Arc'teryx Outlet",
+      "name": "Beta Jacket Women's",
+      "url": "https://outlet.arcteryx.com/us/en/shop/womens/beta-jacket-0516",
+      "adapter": "jsonld_product",
+      "product_group_id": "X000010516",
+      "sku": "X000010516038",
+      "color": "Solitude",
+      "size": "S",
+      "enabled": true
+    },
+    {
+      "id": "arcteryx-outlet-beta-womens-solitude-m",
+      "brand": "Arc'teryx Outlet",
+      "name": "Beta Jacket Women's",
+      "url": "https://outlet.arcteryx.com/us/en/shop/womens/beta-jacket-0516",
+      "adapter": "jsonld_product",
+      "product_group_id": "X000010516",
+      "sku": "X000010516039",
+      "color": "Solitude",
+      "size": "M",
+      "enabled": true
     }
   ]
 }

@@ -5,6 +5,7 @@ from pathlib import Path
 from unittest.mock import patch
 
 from adapters.shopify import endpoint, evaluate, search_product_urls, variants_from_product
+from adapters.jsonld import parse_jsonld_variant
 from config import load_products
 from monitor import update_one, load_state, save_state
 
@@ -81,6 +82,30 @@ class StockCheckTests(unittest.TestCase):
         self.assertEqual(evaluate(items[1],data)[0],'in_stock')
 
 
+class JsonLdStockTests(unittest.TestCase):
+    def setUp(self):
+        self.item={"sku":"X000010516037","size":"XS","color":"Solitude",
+                   "product_group_id":"X000010516"}
+
+    def html(self, availability="OutOfStock", size="XS"):
+        doc={"@type":"ProductGroup","productGroupID":"X000010516","hasVariant":[{
+            "@type":"Product","sku":"X000010516037","size":size,"color":"Solitude",
+            "offers":{"@type":"Offer","availability":f"https://schema.org/{availability}"}}]}
+        return '<script type="application/ld+json">'+json.dumps(doc)+'</script>'
+
+    def test_jsonld_out_of_stock(self):
+        self.assertEqual(parse_jsonld_variant(self.item,self.html())[0],'out_of_stock')
+
+    def test_jsonld_in_stock(self):
+        self.assertEqual(parse_jsonld_variant(self.item,self.html('InStock'))[0],'in_stock')
+
+    def test_jsonld_limited_is_in_stock(self):
+        self.assertEqual(parse_jsonld_variant(self.item,self.html('LimitedAvailability'))[0],'in_stock')
+
+    def test_jsonld_size_mismatch_is_unknown(self):
+        self.assertEqual(parse_jsonld_variant(self.item,self.html(size='S'))[0],'unknown')
+
+
 class StateTests(unittest.TestCase):
     def test_initial_in_stock_alert_once(self):
         sent = []
@@ -144,6 +169,13 @@ class ManifestTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as d:
             p=Path(d)/'products.json';p.write_text(json.dumps({'schema_version':1,'products':[source]}))
             self.assertEqual(load_products(p)[0]['adapter'],'shopify_search')
+
+    def test_jsonld_product_requires_size(self):
+        item={"id":"beta-xs","brand":"Arc'teryx","name":"Beta","url":"https://example.com/beta",
+              "adapter":"jsonld_product","sku":"SKU1","product_group_id":"GROUP1"}
+        with tempfile.TemporaryDirectory() as d:
+            p=Path(d)/'products.json';p.write_text(json.dumps({'schema_version':1,'products':[item]}))
+            with self.assertRaises(ValueError): load_products(p)
 
 
 if __name__ == '__main__': unittest.main()

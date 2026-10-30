@@ -20,6 +20,10 @@ def load_products(path):
                 raise ValueError(f"Product requires a non-empty {key}")
         if product["adapter"] == "shopify" and (not isinstance(product.get("sku"), str) or not product["sku"].strip()):
             raise ValueError("Fixed Shopify product requires a non-empty sku")
+        if product["adapter"] == "jsonld_product":
+            for key in ("sku", "size", "product_group_id"):
+                if not isinstance(product.get(key), str) or not product[key].strip():
+                    raise ValueError(f"JSON-LD product requires a non-empty {key}")
         if product["adapter"] == "shopify_search" and urlsplit(product["url"]).path.rstrip("/") != "/search":
             raise ValueError("Shopify search source URL must use /search")
         excluded = product.get("exclude_handles", [])
