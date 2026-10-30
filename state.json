@@ -647,10 +647,25 @@
           "url": "https://outlet.arcteryx.com/us/en/shop/womens/vertex-speed-shoe-9619"
         }
       },
-      "updated_utc": "2026-10-30T03:24:37+00:00"
+      "updated_utc": "2026-10-30T09:47:56+00:00"
     }
   },
   "products": {
+    "arcteryx-outlet-atom-vest-mens-habitat-l": {
+      "last_reliable": "out_of_stock",
+      "notified_in_stock": false,
+      "unknown_streak": 0
+    },
+    "arcteryx-outlet-atom-vest-mens-habitat-m": {
+      "last_reliable": "out_of_stock",
+      "notified_in_stock": false,
+      "unknown_streak": 0
+    },
+    "arcteryx-outlet-atom-vest-mens-habitat-s": {
+      "last_reliable": "out_of_stock",
+      "notified_in_stock": false,
+      "unknown_streak": 0
+    },
     "arcteryx-outlet-beta-womens-solitude-m": {
       "last_reliable": "out_of_stock",
       "notified_in_stock": false,
