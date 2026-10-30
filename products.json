@@ -37,15 +37,39 @@
       "enabled": true
     },
     {
-      "id": "arcteryx-outlet-beta-womens-solitude-m",
+      "id": "arcteryx-outlet-atom-vest-mens-habitat-s",
       "brand": "Arc'teryx Outlet",
-      "name": "Beta Jacket Women's",
-      "url": "https://outlet.arcteryx.com/us/en/shop/womens/beta-jacket-0516",
+      "name": "Atom Vest Men's",
+      "url": "https://outlet.arcteryx.com/us/en/shop/mens/atom-vest-9559",
       "adapter": "jsonld_product",
-      "product_group_id": "X000010516",
-      "sku": "X000010516039",
-      "color": "Solitude",
+      "product_group_id": "X000009559",
+      "sku": "X000009559039",
+      "color": "Habitat",
+      "size": "S",
+      "enabled": true
+    },
+    {
+      "id": "arcteryx-outlet-atom-vest-mens-habitat-m",
+      "brand": "Arc'teryx Outlet",
+      "name": "Atom Vest Men's",
+      "url": "https://outlet.arcteryx.com/us/en/shop/mens/atom-vest-9559",
+      "adapter": "jsonld_product",
+      "product_group_id": "X000009559",
+      "sku": "X000009559040",
+      "color": "Habitat",
       "size": "M",
+      "enabled": true
+    },
+    {
+      "id": "arcteryx-outlet-atom-vest-mens-habitat-l",
+      "brand": "Arc'teryx Outlet",
+      "name": "Atom Vest Men's",
+      "url": "https://outlet.arcteryx.com/us/en/shop/mens/atom-vest-9559",
+      "adapter": "jsonld_product",
+      "product_group_id": "X000009559",
+      "sku": "X000009559041",
+      "color": "Habitat",
+      "size": "L",
       "enabled": true
     },
     {

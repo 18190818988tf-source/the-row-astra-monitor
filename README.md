@@ -9,7 +9,8 @@
 - The Row Astra series search page (all current products and variants; no fixed SKU list)
 - https://www.therow.com/search?q=%28title%3Aastra%2A+OR+tag%3Aastra%2A+OR+variants.sku%3Aastra%2A%29&type=product
 - Excluded from alerts: `astra-pouch-nuez-ans` (Astra Pouch Nuez)
-- Arc'teryx Outlet — Beta Jacket Women's, Solitude — XS/S/M, checked independently from official JSON-LD
+- Arc'teryx Outlet — Beta Jacket Women's, Solitude (grey) — XS/S, checked independently from official JSON-LD
+- Arc'teryx Outlet — Atom Vest Men's, Habitat — S/M/L, checked independently from official JSON-LD
 - Arc'teryx Outlet catalog watch — women's + men's directories; alert on any price/discount change or at least 5 newly listed/relisted products in one run
 
 ## Project structure
