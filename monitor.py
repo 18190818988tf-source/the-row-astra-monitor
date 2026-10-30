@@ -12,7 +12,8 @@ from urllib.request import Request, urlopen
 from urllib.parse import urlsplit
 from datetime import datetime, timezone
 
-from adapters import ADAPTERS, DISCOVERERS
+from adapters import ADAPTERS, DISCOVERERS, CATALOG_ADAPTERS
+from adapters.arcteryx_catalog import compare_catalog
 from config import load_products
 from notifications.bark import send_bark
 
@@ -96,9 +97,36 @@ def main():
     if not sources:
         print("No enabled products; nothing to do")
         return 1
+    state = load_state(args.state)
+    now = datetime.now(timezone.utc).isoformat(timespec="seconds")
     items = []
     discovery_failed = False
     for source in sources:
+        catalog_fetch = CATALOG_ADAPTERS.get(source["adapter"])
+        if catalog_fetch is not None:
+            try:
+                snapshot = catalog_fetch(source)
+                prior = state.get("catalogs", {}).get(source["id"], {}).get("items", {})
+                new_keys, discount_changes = compare_catalog(
+                    prior, snapshot, source.get("bulk_threshold", 5))
+                print(f"{source['id']}: catalog_items={len(snapshot)} bulk_new={len(new_keys)} discount_changes={len(discount_changes)}")
+                if not args.dry_run and (new_keys or discount_changes):
+                    lines = []
+                    if new_keys:
+                        lines.append(f"批量新增/重新上架: {len(new_keys)} 件")
+                        lines.extend(f"- {snapshot[key]['name']}" for key in new_keys[:10])
+                    if discount_changes:
+                        lines.append(f"折扣变化: {len(discount_changes)} 件")
+                        for change in discount_changes[:10]:
+                            before, after = change["before"], change["after"]
+                            lines.append(f"- {after['name']}: ${before['discount_price']} → ${after['discount_price']}")
+                    send_bark(bark_url, "Arc'teryx Outlet 目录变化", "\n".join(lines), source["url"])
+                if not args.dry_run:
+                    state.setdefault("catalogs", {})[source["id"]] = {"items": snapshot, "updated_utc": now}
+            except Exception as exc:
+                discovery_failed = True
+                print(f"{source['id']}: unknown: catalog failed ({type(exc).__name__})")
+            continue
         discover = DISCOVERERS.get(source["adapter"])
         if discover is None:
             items.append(source)
@@ -113,10 +141,8 @@ def main():
     if not items:
         print("Monitor unhealthy: no products discovered")
         return 2
-    state = load_state(args.state)
     statuses = []
     failures = []
-    now = datetime.now(timezone.utc).isoformat(timespec="seconds")
     for item in items:
         adapter = ADAPTERS.get(item["adapter"])
         if adapter is None:

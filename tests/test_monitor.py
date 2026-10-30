@@ -6,6 +6,7 @@ from unittest.mock import patch
 
 from adapters.shopify import endpoint, evaluate, search_product_urls, variants_from_product
 from adapters.jsonld import parse_jsonld_variant
+from adapters.arcteryx_catalog import parse_catalog_html, compare_catalog
 from config import load_products
 from monitor import update_one, load_state, save_state
 
@@ -104,6 +105,34 @@ class JsonLdStockTests(unittest.TestCase):
 
     def test_jsonld_size_mismatch_is_unknown(self):
         self.assertEqual(parse_jsonld_variant(self.item,self.html(size='S'))[0],'unknown')
+
+
+class CatalogWatchTests(unittest.TestCase):
+    def html(self, products):
+        doc={"props":{"pageProps":{"initialProductList":products}}}
+        return '<script id="__NEXT_DATA__" type="application/json">'+json.dumps(doc)+'</script>'
+
+    def test_catalog_parses_prices(self):
+        products=[{"id":"X1","name":"Jacket","url":"womens/jacket","price":400,"discountPrice":320}]
+        result=parse_catalog_html('https://outlet.arcteryx.com/us/en/c/womens',self.html(products))
+        self.assertEqual(result['womens/jacket']['discount_price'],320)
+
+    def test_catalog_baseline_has_no_alerts(self):
+        current={"a":{"name":"A","price":100,"discount_price":80}}
+        self.assertEqual(compare_catalog({},current,5),([],[]))
+
+    def test_catalog_bulk_threshold(self):
+        previous={"old":{"name":"Old","price":100,"discount_price":80}}
+        current=dict(previous)
+        current.update({str(i):{"name":str(i),"price":100,"discount_price":80} for i in range(5)})
+        new,changes=compare_catalog(previous,current,5)
+        self.assertEqual(len(new),5); self.assertEqual(changes,[])
+
+    def test_catalog_discount_change(self):
+        previous={"a":{"name":"A","price":100,"discount_price":80}}
+        current={"a":{"name":"A","price":100,"discount_price":70}}
+        new,changes=compare_catalog(previous,current,5)
+        self.assertEqual(new,[]); self.assertEqual(len(changes),1)
 
 
 class StateTests(unittest.TestCase):

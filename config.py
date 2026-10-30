@@ -24,6 +24,17 @@ def load_products(path):
             for key in ("sku", "size", "product_group_id"):
                 if not isinstance(product.get(key), str) or not product[key].strip():
                     raise ValueError(f"JSON-LD product requires a non-empty {key}")
+        if product["adapter"] == "arcteryx_catalog":
+            urls = product.get("catalog_urls")
+            if not isinstance(urls, list) or not urls:
+                raise ValueError("Arc'teryx catalog requires catalog_urls")
+            for catalog_url in urls:
+                parsed = urlsplit(catalog_url) if isinstance(catalog_url, str) else None
+                if not parsed or parsed.scheme != "https" or parsed.hostname != "outlet.arcteryx.com":
+                    raise ValueError("Invalid Arc'teryx catalog URL")
+            threshold = product.get("bulk_threshold", 5)
+            if not isinstance(threshold, int) or threshold < 2:
+                raise ValueError("bulk_threshold must be an integer of at least 2")
         if product["adapter"] == "shopify_search" and urlsplit(product["url"]).path.rstrip("/") != "/search":
             raise ValueError("Shopify search source URL must use /search")
         excluded = product.get("exclude_handles", [])

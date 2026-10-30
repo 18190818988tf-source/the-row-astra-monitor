@@ -47,6 +47,19 @@
       "color": "Solitude",
       "size": "M",
       "enabled": true
+    },
+    {
+      "id": "arcteryx-outlet-catalog",
+      "brand": "Arc'teryx Outlet",
+      "name": "Outlet catalog changes",
+      "url": "https://outlet.arcteryx.com/us/en",
+      "adapter": "arcteryx_catalog",
+      "catalog_urls": [
+        "https://outlet.arcteryx.com/us/en/c/womens",
+        "https://outlet.arcteryx.com/us/en/c/mens"
+      ],
+      "bulk_threshold": 5,
+      "enabled": true
     }
   ]
 }

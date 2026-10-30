@@ -10,12 +10,14 @@
 - https://www.therow.com/search?q=%28title%3Aastra%2A+OR+tag%3Aastra%2A+OR+variants.sku%3Aastra%2A%29&type=product
 - Excluded from alerts: `astra-pouch-nuez-ans` (Astra Pouch Nuez)
 - Arc'teryx Outlet — Beta Jacket Women's, Solitude — XS/S/M, checked independently from official JSON-LD
+- Arc'teryx Outlet catalog watch — women's + men's directories; alert on any price/discount change or at least 5 newly listed/relisted products in one run
 
 ## Project structure
 
 - `products.json` — monitored fixed products or dynamic catalog sources
 - `adapters/shopify.py` — Shopify search discovery plus strict variant-level stock checks
 - `adapters/jsonld.py` — strict SKU/size checks from official product JSON-LD
+- `adapters/arcteryx_catalog.py` — catalog snapshots, bulk listing detection and discount-price change detection
 - `monitor.py` — scheduler entrypoint, state transitions, Bark push and optional uptime heartbeat
 - `notifications/bark.py` — Bark notification delivery, from `BARK_PUSH_URL` secret
 - `state.json` — persisted stock status across GitHub Actions runs
