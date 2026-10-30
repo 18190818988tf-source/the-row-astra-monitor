@@ -1,5 +1,671 @@
 {
+  "catalogs": {
+    "arcteryx-outlet-catalog": {
+      "items": {
+        "alpha-fl-20-backpack-8984": {
+          "discount_price": 175,
+          "id": "X000008984",
+          "name": "Alpha FL 20 Backpack",
+          "price": 250,
+          "url": "https://outlet.arcteryx.com/us/en/shop/alpha-fl-20-backpack-8984"
+        },
+        "mallow-toque": {
+          "discount_price": 33,
+          "id": "X000007423",
+          "name": "Mallow Toque",
+          "price": 55,
+          "url": "https://outlet.arcteryx.com/us/en/shop/mallow-toque"
+        },
+        "mens/alpha-jacket-9898": {
+          "discount_price": 490,
+          "id": "X000009898",
+          "name": "Alpha Jacket Men's",
+          "price": 700,
+          "url": "https://outlet.arcteryx.com/us/en/shop/mens/alpha-jacket-9898"
+        },
+        "mens/alpha-sl-jacket-0287": {
+          "discount_price": 400,
+          "id": "X000010287",
+          "name": "Alpha SL Jacket Men's",
+          "price": 500,
+          "url": "https://outlet.arcteryx.com/us/en/shop/mens/alpha-sl-jacket-0287"
+        },
+        "mens/alpha-sv-bib-pant-9900": {
+          "discount_price": 450,
+          "id": "X000009900",
+          "name": "Alpha SV Bib Pant Men's",
+          "price": 750,
+          "url": "https://outlet.arcteryx.com/us/en/shop/mens/alpha-sv-bib-pant-9900"
+        },
+        "mens/alpha-sv-jacket-9899": {
+          "discount_price": 630,
+          "id": "X000009899",
+          "name": "Alpha SV Jacket Men's",
+          "price": 900,
+          "url": "https://outlet.arcteryx.com/us/en/shop/mens/alpha-sv-jacket-9899"
+        },
+        "mens/atom-hoody-9556": {
+          "discount_price": 210,
+          "id": "X000009556",
+          "name": "Atom Hoody Men's",
+          "price": 300,
+          "url": "https://outlet.arcteryx.com/us/en/shop/mens/atom-hoody-9556"
+        },
+        "mens/beta-ar-jacket-9906": {
+          "discount_price": 455,
+          "id": "X000009906",
+          "name": "Beta AR Jacket Men's",
+          "price": 650,
+          "url": "https://outlet.arcteryx.com/us/en/shop/mens/beta-ar-jacket-9906"
+        },
+        "mens/beta-insulated-jacket-0510": {
+          "discount_price": 525,
+          "id": "X000010510",
+          "name": "Beta Insulated Jacket Men's",
+          "price": 750,
+          "url": "https://outlet.arcteryx.com/us/en/shop/mens/beta-insulated-jacket-0510"
+        },
+        "mens/beta-jacket-0511": {
+          "discount_price": 280,
+          "id": "X000010511",
+          "name": "Beta Jacket Men's",
+          "price": 400,
+          "url": "https://outlet.arcteryx.com/us/en/shop/mens/beta-jacket-0511"
+        },
+        "mens/beta-sl-jacket-0553": {
+          "discount_price": 350,
+          "id": "X000010553",
+          "name": "Beta SL Jacket Men's",
+          "price": 500,
+          "url": "https://outlet.arcteryx.com/us/en/shop/mens/beta-sl-jacket-0553"
+        },
+        "mens/beta-sv-jacket-0283": {
+          "discount_price": 560,
+          "id": "X000010283",
+          "name": "Beta SV Jacket Men's",
+          "price": 800,
+          "url": "https://outlet.arcteryx.com/us/en/shop/mens/beta-sv-jacket-0283"
+        },
+        "mens/covert-1-2-zip-neck-0360": {
+          "discount_price": 112,
+          "id": "X000010360",
+          "name": "Covert 1/2 Zip Neck Men's",
+          "price": 160,
+          "url": "https://outlet.arcteryx.com/us/en/shop/mens/covert-1-2-zip-neck-0360"
+        },
+        "mens/creston-ar-pant-0583": {
+          "discount_price": 132,
+          "id": "X000010583",
+          "name": "Creston AR Pant Men's",
+          "price": 220,
+          "url": "https://outlet.arcteryx.com/us/en/shop/mens/creston-ar-pant-0583"
+        },
+        "mens/emblem-fleece-crew-neck-pullover-9787": {
+          "discount_price": 84,
+          "id": "X000009787",
+          "name": "Emblem Fleece Crew Neck Pullover Men's",
+          "price": 120,
+          "url": "https://outlet.arcteryx.com/us/en/shop/mens/emblem-fleece-crew-neck-pullover-9787"
+        },
+        "mens/gamma-jogger-0040": {
+          "discount_price": 140,
+          "id": "X000010040",
+          "name": "Gamma Jogger Men's",
+          "price": 200,
+          "url": "https://outlet.arcteryx.com/us/en/shop/mens/gamma-jogger-0040"
+        },
+        "mens/gamma-mx-hoody-8485": {
+          "discount_price": 280,
+          "id": "X000008485",
+          "name": "Gamma MX Hoody Men's",
+          "price": 400,
+          "url": "https://outlet.arcteryx.com/us/en/shop/mens/gamma-mx-hoody-8485"
+        },
+        "mens/ionia-merino-wool-shirt-ss": {
+          "discount_price": 63,
+          "id": "X000006816",
+          "name": "Ionia Merino Wool Shirt SS Men's",
+          "price": 90,
+          "url": "https://outlet.arcteryx.com/us/en/shop/mens/ionia-merino-wool-shirt-ss"
+        },
+        "mens/konseal-gtx-shoe-9833": {
+          "discount_price": 154,
+          "id": "X000009833",
+          "name": "Konseal GTX Shoe Men's",
+          "price": 220,
+          "url": "https://outlet.arcteryx.com/us/en/shop/mens/konseal-gtx-shoe-9833"
+        },
+        "mens/konseal-shoe-9834": {
+          "discount_price": 133,
+          "id": "X000009834",
+          "name": "Konseal Shoe Men's",
+          "price": 190,
+          "url": "https://outlet.arcteryx.com/us/en/shop/mens/konseal-shoe-9834"
+        },
+        "mens/konseal-sl-pullover-hoody-9807": {
+          "discount_price": 112,
+          "id": "X000009807",
+          "name": "Konseal SL Pullover Hoody Men's",
+          "price": 160,
+          "url": "https://outlet.arcteryx.com/us/en/shop/mens/konseal-sl-pullover-hoody-9807"
+        },
+        "mens/kopec-gtx-shoe-0023": {
+          "discount_price": 108,
+          "id": "X000010023",
+          "name": "Kopec GTX Shoe Men's",
+          "price": 180,
+          "url": "https://outlet.arcteryx.com/us/en/shop/mens/kopec-gtx-shoe-0023"
+        },
+        "mens/kopec-mid-gtx-boot-0029": {
+          "discount_price": 120,
+          "id": "X000010029",
+          "name": "Kopec Mid GTX Boot Men's",
+          "price": 200,
+          "url": "https://outlet.arcteryx.com/us/en/shop/mens/kopec-mid-gtx-boot-0029"
+        },
+        "mens/kragg-cotton-shirt-ls-9714": {
+          "discount_price": 56,
+          "id": "X000009714",
+          "name": "Kragg Cotton Shirt LS Men's",
+          "price": 80,
+          "url": "https://outlet.arcteryx.com/us/en/shop/mens/kragg-cotton-shirt-ls-9714"
+        },
+        "mens/kragg-insulated-shoe-9205": {
+          "discount_price": 90,
+          "id": "X000009205",
+          "name": "Kragg Insulated Shoe Men's",
+          "price": 180,
+          "url": "https://outlet.arcteryx.com/us/en/shop/mens/kragg-insulated-shoe-9205"
+        },
+        "mens/kragg-multi-shoe-0404": {
+          "discount_price": 63,
+          "id": "X000010404",
+          "name": "Kragg Multi Shoe Men's",
+          "price": 180,
+          "url": "https://outlet.arcteryx.com/us/en/shop/mens/kragg-multi-shoe-0404"
+        },
+        "mens/kragg-shoe-0078": {
+          "discount_price": 98,
+          "id": "X000010078",
+          "name": "Kragg Shoe Men's",
+          "price": 140,
+          "url": "https://outlet.arcteryx.com/us/en/shop/mens/kragg-shoe-0078"
+        },
+        "mens/kragg-shoe-0110": {
+          "discount_price": 80,
+          "id": "X000010110",
+          "name": "Kragg Shoe Men's",
+          "price": 160,
+          "url": "https://outlet.arcteryx.com/us/en/shop/mens/kragg-shoe-0110"
+        },
+        "mens/monitor-down-coat-9943": {
+          "discount_price": 1260,
+          "id": "X000009943",
+          "name": "Monitor Down Coat Men's",
+          "price": 1800,
+          "url": "https://outlet.arcteryx.com/us/en/shop/mens/monitor-down-coat-9943"
+        },
+        "mens/norvan-4-nivalis-grotto-shoe-0172": {
+          "discount_price": 91,
+          "id": "X000010172",
+          "name": "Norvan 4 Nivalis GTX Grotto Shoe Men's",
+          "price": 260,
+          "url": "https://outlet.arcteryx.com/us/en/shop/mens/norvan-4-nivalis-grotto-shoe-0172"
+        },
+        "mens/norvan-4-nivalis-shoe-9835": {
+          "discount_price": 125,
+          "id": "X000009835",
+          "name": "Norvan 4 Nivalis GTX Shoe Men's",
+          "price": 250,
+          "url": "https://outlet.arcteryx.com/us/en/shop/mens/norvan-4-nivalis-shoe-9835"
+        },
+        "mens/norvan-ld-4-shoe-0398": {
+          "discount_price": 102,
+          "id": "X000010398",
+          "name": "Norvan LD 4 Shoe Men's",
+          "price": 170,
+          "url": "https://outlet.arcteryx.com/us/en/shop/mens/norvan-ld-4-shoe-0398"
+        },
+        "mens/norvan-liner-short-7-9540": {
+          "discount_price": 70,
+          "id": "X000009540",
+          "name": "Norvan Liner Short 7\" Men's",
+          "price": 100,
+          "url": "https://outlet.arcteryx.com/us/en/shop/mens/norvan-liner-short-7-9540"
+        },
+        "mens/rho-lt-bottom-0037": {
+          "discount_price": 60,
+          "id": "X000010037",
+          "name": "Rho LT Bottom Men's",
+          "price": 100,
+          "url": "https://outlet.arcteryx.com/us/en/shop/mens/rho-lt-bottom-0037"
+        },
+        "mens/rho-lt-bottom-9418": {
+          "discount_price": 50,
+          "id": "X000009418",
+          "name": "Rho LT Bottom Men's",
+          "price": 100,
+          "url": "https://outlet.arcteryx.com/us/en/shop/mens/rho-lt-bottom-9418"
+        },
+        "mens/rhoam-pant-9534": {
+          "discount_price": 196,
+          "id": "X000009534",
+          "name": "Rhoam Pant Men's",
+          "price": 280,
+          "url": "https://outlet.arcteryx.com/us/en/shop/mens/rhoam-pant-9534"
+        },
+        "mens/rhoam-short-9541": {
+          "discount_price": 126,
+          "id": "X000009541",
+          "name": "Rhoam Short Men's",
+          "price": 180,
+          "url": "https://outlet.arcteryx.com/us/en/shop/mens/rhoam-short-9541"
+        },
+        "mens/rush-bib-pant-9904": {
+          "discount_price": 450,
+          "id": "X000009904",
+          "name": "Rush Bib Pant Men's",
+          "price": 750,
+          "url": "https://outlet.arcteryx.com/us/en/shop/mens/rush-bib-pant-9904"
+        },
+        "mens/serratus-pant-9527": {
+          "discount_price": 168,
+          "id": "X000009527",
+          "name": "Serratus Pant Men's",
+          "price": 240,
+          "url": "https://outlet.arcteryx.com/us/en/shop/mens/serratus-pant-9527"
+        },
+        "mens/sylan-2-shoe-0155": {
+          "discount_price": 154,
+          "id": "X000010155",
+          "name": "Sylan 2 Shoe Men's",
+          "price": 220,
+          "url": "https://outlet.arcteryx.com/us/en/shop/mens/sylan-2-shoe-0155"
+        },
+        "mens/therme-down-parka-9914": {
+          "discount_price": 630,
+          "id": "X000009914",
+          "name": "Therme Down Parka Men's",
+          "price": 900,
+          "url": "https://outlet.arcteryx.com/us/en/shop/mens/therme-down-parka-9914"
+        },
+        "mens/therme-jacket-0274": {
+          "discount_price": 480,
+          "id": "X000010274",
+          "name": "Therme Jacket Men's",
+          "price": 600,
+          "url": "https://outlet.arcteryx.com/us/en/shop/mens/therme-jacket-0274"
+        },
+        "mens/vertex-alpine-gtx-shoe-9602": {
+          "discount_price": 175,
+          "id": "X000009602",
+          "name": "Vertex Alpine GTX Shoe Men's",
+          "price": 250,
+          "url": "https://outlet.arcteryx.com/us/en/shop/mens/vertex-alpine-gtx-shoe-9602"
+        },
+        "mens/vertex-alpine-shoe": {
+          "discount_price": 161,
+          "id": "X000009019",
+          "name": "Vertex Alpine Shoe Men's",
+          "price": 230,
+          "url": "https://outlet.arcteryx.com/us/en/shop/mens/vertex-alpine-shoe"
+        },
+        "mens/vertex-speed-low-shoe-9715": {
+          "discount_price": 108,
+          "id": "X000009715",
+          "name": "Vertex Speed Low Shoe Men's",
+          "price": 180,
+          "url": "https://outlet.arcteryx.com/us/en/shop/mens/vertex-speed-low-shoe-9715"
+        },
+        "mens/vertex-speed-shoe-9613": {
+          "discount_price": 114,
+          "id": "X000009613",
+          "name": "Vertex Speed Shoe Men's",
+          "price": 190,
+          "url": "https://outlet.arcteryx.com/us/en/shop/mens/vertex-speed-shoe-9613"
+        },
+        "ribbed-toque-9930": {
+          "discount_price": 45.5,
+          "id": "X000009930",
+          "name": "Ribbed Toque",
+          "price": 65,
+          "url": "https://outlet.arcteryx.com/us/en/shop/ribbed-toque-9930"
+        },
+        "silex-cap-0185": {
+          "discount_price": 42,
+          "id": "X000010185",
+          "name": "Silex Cap",
+          "price": 60,
+          "url": "https://outlet.arcteryx.com/us/en/shop/silex-cap-0185"
+        },
+        "sinsola-shade-hat-0339": {
+          "discount_price": 59.5,
+          "id": "X000010339",
+          "name": "Sinsola Shade Hat",
+          "price": 85,
+          "url": "https://outlet.arcteryx.com/us/en/shop/sinsola-shade-hat-0339"
+        },
+        "womens/aestas-crew-neck-pullover-9053": {
+          "discount_price": 140,
+          "id": "X000009053",
+          "name": "Aestas Crew Neck Pullover Women's",
+          "price": 200,
+          "url": "https://outlet.arcteryx.com/us/en/shop/womens/aestas-crew-neck-pullover-9053"
+        },
+        "womens/andessa-insulated-pant-9864": {
+          "discount_price": 490,
+          "id": "X000009864",
+          "name": "Andessa Insulated Pant Women's",
+          "price": 700,
+          "url": "https://outlet.arcteryx.com/us/en/shop/womens/andessa-insulated-pant-9864"
+        },
+        "womens/atom-hoody-9452": {
+          "discount_price": 180,
+          "id": "X000009452",
+          "name": "Atom Hoody Women's",
+          "price": 300,
+          "url": "https://outlet.arcteryx.com/us/en/shop/womens/atom-hoody-9452"
+        },
+        "womens/atom-long-coat-9854": {
+          "discount_price": 245,
+          "id": "X000009854",
+          "name": "Atom Long Coat Women's",
+          "price": 350,
+          "url": "https://outlet.arcteryx.com/us/en/shop/womens/atom-long-coat-9854"
+        },
+        "womens/beta-ar-jacket-9863": {
+          "discount_price": 390,
+          "id": "X000009863",
+          "name": "Beta AR Jacket Women's",
+          "price": 650,
+          "url": "https://outlet.arcteryx.com/us/en/shop/womens/beta-ar-jacket-9863"
+        },
+        "womens/beta-coat-9096": {
+          "discount_price": 360,
+          "id": "X000009096",
+          "name": "Beta Coat Women's",
+          "price": 600,
+          "url": "https://outlet.arcteryx.com/us/en/shop/womens/beta-coat-9096"
+        },
+        "womens/beta-insulated-jacket-0512": {
+          "discount_price": 525,
+          "id": "X000010512",
+          "name": "Beta Insulated Jacket Women's",
+          "price": 750,
+          "url": "https://outlet.arcteryx.com/us/en/shop/womens/beta-insulated-jacket-0512"
+        },
+        "womens/beta-jacket-0516": {
+          "discount_price": 320,
+          "id": "X000010516",
+          "name": "Beta Jacket Women's",
+          "price": 400,
+          "url": "https://outlet.arcteryx.com/us/en/shop/womens/beta-jacket-0516"
+        },
+        "womens/gamma-mx-coat-9851": {
+          "discount_price": 315,
+          "id": "X000009851",
+          "name": "Gamma MX Coat Women's",
+          "price": 450,
+          "url": "https://outlet.arcteryx.com/us/en/shop/womens/gamma-mx-coat-9851"
+        },
+        "womens/hallam-merino-wool-hoody": {
+          "discount_price": 132,
+          "id": "X000007875",
+          "name": "Hallam Merino Wool Hoody Women's",
+          "price": 220,
+          "url": "https://outlet.arcteryx.com/us/en/shop/womens/hallam-merino-wool-hoody"
+        },
+        "womens/incendia-pant-9860": {
+          "discount_price": 245,
+          "id": "X000009860",
+          "name": "Incendia Pant Women's",
+          "price": 700,
+          "url": "https://outlet.arcteryx.com/us/en/shop/womens/incendia-pant-9860"
+        },
+        "womens/konseal-gtx-shoe-9972": {
+          "discount_price": 154,
+          "id": "X000009972",
+          "name": "Konseal GTX Shoe Women's",
+          "price": 220,
+          "url": "https://outlet.arcteryx.com/us/en/shop/womens/konseal-gtx-shoe-9972"
+        },
+        "womens/konseal-shoe-9970": {
+          "discount_price": 133,
+          "id": "X000009970",
+          "name": "Konseal Shoe Women's",
+          "price": 190,
+          "url": "https://outlet.arcteryx.com/us/en/shop/womens/konseal-shoe-9970"
+        },
+        "womens/kopec-gtx-shoe-0028": {
+          "discount_price": 108,
+          "id": "X000010028",
+          "name": "Kopec GTX Shoe Women's",
+          "price": 180,
+          "url": "https://outlet.arcteryx.com/us/en/shop/womens/kopec-gtx-shoe-0028"
+        },
+        "womens/kopec-mid-gtx-boot-0031": {
+          "discount_price": 120,
+          "id": "X000010031",
+          "name": "Kopec Mid GTX Boot Women's",
+          "price": 200,
+          "url": "https://outlet.arcteryx.com/us/en/shop/womens/kopec-mid-gtx-boot-0031"
+        },
+        "womens/kragg-insulated-shoe-9210": {
+          "discount_price": 90,
+          "id": "X000009210",
+          "name": "Kragg Insulated Shoe Women's",
+          "price": 180,
+          "url": "https://outlet.arcteryx.com/us/en/shop/womens/kragg-insulated-shoe-9210"
+        },
+        "womens/kragg-multi-shoe-0406": {
+          "discount_price": 90,
+          "id": "X000010406",
+          "name": "Kragg Multi Shoe Women's",
+          "price": 180,
+          "url": "https://outlet.arcteryx.com/us/en/shop/womens/kragg-multi-shoe-0406"
+        },
+        "womens/kragg-shoe-0081": {
+          "discount_price": 98,
+          "id": "X000010081",
+          "name": "Kragg Shoe Women's",
+          "price": 140,
+          "url": "https://outlet.arcteryx.com/us/en/shop/womens/kragg-shoe-0081"
+        },
+        "womens/kragg-shoe-0111": {
+          "discount_price": 80,
+          "id": "X000010111",
+          "name": "Kragg Shoe Women's",
+          "price": 160,
+          "url": "https://outlet.arcteryx.com/us/en/shop/womens/kragg-shoe-0111"
+        },
+        "womens/kragg-sl-cotton-heatmap-crew-shirt-ss-0223": {
+          "discount_price": 49,
+          "id": "X000010223",
+          "name": "Kragg SL Cotton Heatmap Crew Shirt SS Women's",
+          "price": 70,
+          "url": "https://outlet.arcteryx.com/us/en/shop/womens/kragg-sl-cotton-heatmap-crew-shirt-ss-0223"
+        },
+        "womens/liatris-jacket-9467": {
+          "discount_price": 455,
+          "id": "X000009467",
+          "name": "Liatris Jacket Women's",
+          "price": 650,
+          "url": "https://outlet.arcteryx.com/us/en/shop/womens/liatris-jacket-9467"
+        },
+        "womens/liatris-long-coat-9097": {
+          "discount_price": 525,
+          "id": "X000009097",
+          "name": "Liatris Long Coat Women's",
+          "price": 750,
+          "url": "https://outlet.arcteryx.com/us/en/shop/womens/liatris-long-coat-9097"
+        },
+        "womens/norvan-4-nivalis-grotto-shoe-0174": {
+          "discount_price": 91,
+          "id": "X000010174",
+          "name": "Norvan 4 Nivalis GTX Grotto Shoe Women's",
+          "price": 260,
+          "url": "https://outlet.arcteryx.com/us/en/shop/womens/norvan-4-nivalis-grotto-shoe-0174"
+        },
+        "womens/norvan-short-3-0613": {
+          "discount_price": 63,
+          "id": "X000010613",
+          "name": "Norvan Short 3\" Women's",
+          "price": 90,
+          "url": "https://outlet.arcteryx.com/us/en/shop/womens/norvan-short-3-0613"
+        },
+        "womens/psiphon-pant-9505": {
+          "discount_price": 168,
+          "id": "X000009505",
+          "name": "Psiphon Pant Women's",
+          "price": 240,
+          "url": "https://outlet.arcteryx.com/us/en/shop/womens/psiphon-pant-9505"
+        },
+        "womens/rho-bottom": {
+          "discount_price": 60,
+          "id": "X000007308",
+          "name": "Rho Bottom Women's",
+          "price": 100,
+          "url": "https://outlet.arcteryx.com/us/en/shop/womens/rho-bottom"
+        },
+        "womens/rho-bottom-0534": {
+          "discount_price": 70,
+          "id": "X000010534",
+          "name": "Rho Bottom Women's",
+          "price": 100,
+          "url": "https://outlet.arcteryx.com/us/en/shop/womens/rho-bottom-0534"
+        },
+        "womens/rho-hybrid-insulated-bottom-8473": {
+          "discount_price": 126,
+          "id": "X000008473",
+          "name": "Rho Hybrid Insulated Bottom Women's",
+          "price": 180,
+          "url": "https://outlet.arcteryx.com/us/en/shop/womens/rho-hybrid-insulated-bottom-8473"
+        },
+        "womens/rhoam-pant-9516": {
+          "discount_price": 196,
+          "id": "X000009516",
+          "name": "Rhoam Pant Women's",
+          "price": 280,
+          "url": "https://outlet.arcteryx.com/us/en/shop/womens/rhoam-pant-9516"
+        },
+        "womens/rhoam-short-9563": {
+          "discount_price": 126,
+          "id": "X000009563",
+          "name": "Rhoam Short Women's",
+          "price": 180,
+          "url": "https://outlet.arcteryx.com/us/en/shop/womens/rhoam-short-9563"
+        },
+        "womens/rula-t-shirt-ss-0087": {
+          "discount_price": 49,
+          "id": "X000010087",
+          "name": "Rula T-Shirt SS Women's",
+          "price": 70,
+          "url": "https://outlet.arcteryx.com/us/en/shop/womens/rula-t-shirt-ss-0087"
+        },
+        "womens/sentinel-pant-8896": {
+          "discount_price": 300,
+          "id": "X000008896",
+          "name": "Sentinel Pant Women's",
+          "price": 600,
+          "url": "https://outlet.arcteryx.com/us/en/shop/womens/sentinel-pant-8896"
+        },
+        "womens/sentinel-pant-print-9869": {
+          "discount_price": 227.5,
+          "id": "X000009869",
+          "name": "Sentinel Pant Print Women's",
+          "price": 650,
+          "url": "https://outlet.arcteryx.com/us/en/shop/womens/sentinel-pant-print-9869"
+        },
+        "womens/silene-tank": {
+          "discount_price": 40,
+          "id": "X000007688",
+          "name": "Silene Tank Women's",
+          "price": 80,
+          "url": "https://outlet.arcteryx.com/us/en/shop/womens/silene-tank"
+        },
+        "womens/sunna-tank-0252": {
+          "discount_price": 42,
+          "id": "X000010252",
+          "name": "Sunna Tank Women's",
+          "price": 60,
+          "url": "https://outlet.arcteryx.com/us/en/shop/womens/sunna-tank-0252"
+        },
+        "womens/sylan-2-shoe-0153": {
+          "discount_price": 154,
+          "id": "X000010153",
+          "name": "Sylan 2 Shoe Women's",
+          "price": 220,
+          "url": "https://outlet.arcteryx.com/us/en/shop/womens/sylan-2-shoe-0153"
+        },
+        "womens/taema-crew-neck-shirt-ls": {
+          "discount_price": 40,
+          "id": "X000006914",
+          "name": "Taema Crew Neck Shirt LS Women's",
+          "price": 80,
+          "url": "https://outlet.arcteryx.com/us/en/shop/womens/taema-crew-neck-shirt-ls"
+        },
+        "womens/taema-hoody": {
+          "discount_price": 45,
+          "id": "X000007295",
+          "name": "Taema Hoody Women's",
+          "price": 90,
+          "url": "https://outlet.arcteryx.com/us/en/shop/womens/taema-hoody"
+        },
+        "womens/taema-tank": {
+          "discount_price": 30,
+          "id": "X000007199",
+          "name": "Taema Tank Women's",
+          "price": 60,
+          "url": "https://outlet.arcteryx.com/us/en/shop/womens/taema-tank"
+        },
+        "womens/vertex-alpine-gtx-shoe-9603": {
+          "discount_price": 150,
+          "id": "X000009603",
+          "name": "Vertex Alpine GTX Shoe Women's",
+          "price": 250,
+          "url": "https://outlet.arcteryx.com/us/en/shop/womens/vertex-alpine-gtx-shoe-9603"
+        },
+        "womens/vertex-alpine-shoe": {
+          "discount_price": 115,
+          "id": "X000009028",
+          "name": "Vertex Alpine Shoe Women's",
+          "price": 230,
+          "url": "https://outlet.arcteryx.com/us/en/shop/womens/vertex-alpine-shoe"
+        },
+        "womens/vertex-speed-low-shoe-9716": {
+          "discount_price": 108,
+          "id": "X000009716",
+          "name": "Vertex Speed Low Shoe Women's",
+          "price": 180,
+          "url": "https://outlet.arcteryx.com/us/en/shop/womens/vertex-speed-low-shoe-9716"
+        },
+        "womens/vertex-speed-shoe-9619": {
+          "discount_price": 95,
+          "id": "X000009619",
+          "name": "Vertex Speed Shoe Women's",
+          "price": 190,
+          "url": "https://outlet.arcteryx.com/us/en/shop/womens/vertex-speed-shoe-9619"
+        }
+      },
+      "updated_utc": "2026-10-30T03:24:37+00:00"
+    }
+  },
   "products": {
+    "arcteryx-outlet-beta-womens-solitude-m": {
+      "last_reliable": "out_of_stock",
+      "notified_in_stock": false,
+      "unknown_streak": 0
+    },
+    "arcteryx-outlet-beta-womens-solitude-s": {
+      "last_reliable": "out_of_stock",
+      "notified_in_stock": false,
+      "unknown_streak": 0
+    },
+    "arcteryx-outlet-beta-womens-solitude-xs": {
+      "last_reliable": "out_of_stock",
+      "notified_in_stock": false,
+      "unknown_streak": 0
+    },
     "the-row-astra-black-one-size": {
       "last_reliable": "out_of_stock",
       "notified_in_stock": false,
