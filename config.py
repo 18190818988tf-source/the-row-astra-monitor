@@ -22,6 +22,10 @@ def load_products(path):
             raise ValueError("Fixed Shopify product requires a non-empty sku")
         if product["adapter"] == "shopify_search" and urlsplit(product["url"]).path.rstrip("/") != "/search":
             raise ValueError("Shopify search source URL must use /search")
+        excluded = product.get("exclude_handles", [])
+        if not isinstance(excluded, list) or any(not isinstance(handle, str) or not handle.strip()
+                                                   for handle in excluded):
+            raise ValueError("exclude_handles must be a list of non-empty product handles")
         if product["id"] in ids:
             raise ValueError(f"Duplicate product id {product['id']}")
         ids.add(product["id"])

@@ -8,6 +8,7 @@
 
 - The Row Astra series search page (all current products and variants; no fixed SKU list)
 - https://www.therow.com/search?q=%28title%3Aastra%2A+OR+tag%3Aastra%2A+OR+variants.sku%3Aastra%2A%29&type=product
+- Excluded from alerts: `astra-pouch-nuez-ans` (Astra Pouch Nuez)
 
 ## Project structure
 

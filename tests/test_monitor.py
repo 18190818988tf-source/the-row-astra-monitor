@@ -62,6 +62,13 @@ class StockCheckTests(unittest.TestCase):
         self.assertEqual(search_product_urls(search, html),
                          ['https://www.therow.com/products/astra-black'])
 
+    def test_search_product_can_be_excluded_by_handle(self):
+        search='https://www.therow.com/search?q=astra&type=product'
+        html='''<a href="/products/astra-pouch-nuez-ans">Pouch</a>
+                <a href="/products/astra-black-ans-1">Bag</a>'''
+        self.assertEqual(search_product_urls(search, html, ['astra-pouch-nuez-ans']),
+                         ['https://www.therow.com/products/astra-black-ans-1'])
+
     def test_dynamic_product_expands_all_variants_without_fixed_sku(self):
         source={"id":"series","brand":"The Row","name":"Astra Series"}
         data={"handle":"astra-black","title":"Astra Bag in Leather","variants":[

@@ -36,17 +36,20 @@ class _ProductLinkParser(HTMLParser):
             self.hrefs.append(href)
 
 
-def search_product_urls(search_url, html):
+def search_product_urls(search_url, html, exclude_handles=()):
     """Return unique same-store /products/<handle> URLs from search HTML."""
     parser = _ProductLinkParser()
     parser.feed(html)
     source = urlsplit(search_url)
     results = []
     seen = set()
+    excluded = {str(handle).strip().casefold() for handle in exclude_handles}
     for href in parser.hrefs:
         absolute = urlsplit(urljoin(search_url, href))
         parts = [part for part in absolute.path.split("/") if part]
         if absolute.hostname != source.hostname or len(parts) != 2 or parts[0] != "products":
+            continue
+        if parts[1].casefold() in excluded:
             continue
         clean = urlunsplit((source.scheme, source.netloc, "/products/" + parts[1], "", ""))
         if clean not in seen:
@@ -125,7 +128,8 @@ def discover_shopify_search(source):
                 html = exc.partial
         if len(html) > 4 * 1024 * 1024:
             raise StockError("Search page exceeds size limit")
-        urls = search_product_urls(source["url"], html.decode("utf-8", errors="replace"))
+        urls = search_product_urls(source["url"], html.decode("utf-8", errors="replace"),
+                                   source.get("exclude_handles", []))
         if not urls:
             raise StockError("Search page returned no product links")
         items = []
