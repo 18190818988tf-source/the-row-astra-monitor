@@ -1,18 +1,18 @@
 # Multi-brand Stock Monitor（多品牌库存监控中心）
 
-**One repository, many brands, many SKUs.** An extensible Python monitoring starter, initially with one **verified Shopify** adapter and one real The Row Astra entry.
+**One repository, many brands, many products.** The Row Astra source dynamically discovers every product and variant currently listed by the official search page.
 
 > ⚠️ Important: Stock signals are from Shopify's public product JSON, not proof of a completed checkout. The program never logs in, adds products to cart, places orders, or pays. An item being flagged `in_stock` by Shopify is an actionable signal, not an absolute guarantee of website purchase success.
 
-## Current product
+## Current catalog
 
-- The Row — Astra Bag — Black / One Size — SKU `W2164L117BLANS1SZ`
-- https://www.therow.com/products/astra-black-ans-1
+- The Row Astra series search page (all current products and variants; no fixed SKU list)
+- https://www.therow.com/search?q=%28title%3Aastra%2A+OR+tag%3Aastra%2A+OR+variants.sku%3Aastra%2A%29&type=product
 
 ## Project structure
 
-- `products.json` — one JSON array of monitored products; add/disable items here
-- `adapters/shopify.py` — stock check for Shopify storefronts, exact SKU match
+- `products.json` — monitored fixed products or dynamic catalog sources
+- `adapters/shopify.py` — Shopify search discovery plus strict variant-level stock checks
 - `monitor.py` — scheduler entrypoint, state transitions, Bark push and optional uptime heartbeat
 - `notifications/bark.py` — Bark notification delivery, from `BARK_PUSH_URL` secret
 - `state.json` — persisted stock status across GitHub Actions runs
@@ -48,11 +48,11 @@ First go to `Actions > Multi-brand stock monitor > Run workflow`.
 - Default manual run is `dry_run=true`: fetch real product stock but **no notification**, no state change.
 - To test Bark, first create a repository secret `BARK_PUSH_URL` containing the full HTTPS Bark device push endpoint, like `https://api.day.app/DEVICE_PRIVATE_KEY` (do not share the real URL). Run manually with `test_push=true`.
 - For real notification on manual run: `test_push=false, dry_run=false`; this queries enabled products and saves their latest status.
-- Scheduled runs are **not** dry-run; they attempt real checks and send a Bark alert when a particular SKU is seen `in_stock` and not already notified in this stock cycle.
+- Scheduled runs are **not** dry-run; they rediscover the whole Astra result page and alert independently for each variant seen `in_stock` and not already notified in that stock cycle.
 
 ## Adding products
 
-Add another object to `products.json`:
+The Astra entry uses `adapter: shopify_search`, so products added to that official search result are discovered automatically. A fixed Shopify item can still be added like this:
 
 ```json
 {

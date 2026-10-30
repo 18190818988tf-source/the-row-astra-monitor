@@ -12,7 +12,7 @@ from urllib.request import Request, urlopen
 from urllib.parse import urlsplit
 from datetime import datetime, timezone
 
-from adapters import ADAPTERS
+from adapters import ADAPTERS, DISCOVERERS
 from config import load_products
 from notifications.bark import send_bark
 
@@ -53,7 +53,8 @@ def update_one(item, previous, status, proof, send_push, now):
         state["last_reliable"] = "in_stock"
         if not state.get("notified_in_stock", False):
             title = f"补货提醒：{item['brand']} {item['name']}"
-            details = [f"SKU: {item['sku']}", f"颜色: {item.get('color', '未指定')}",
+            identity = item.get("sku") or f"Variant ID {item.get('variant_id', '未指定')}"
+            details = [f"商品标识: {identity}", f"颜色/款式: {item.get('color', '未指定')}",
                        f"尺码: {item.get('size', '未指定')}",
                        f"时间(UTC): {now}", proof, "点击查看官网；未验证最终结账"]
             # On push errors, raises. The state is not marked notified.
@@ -91,10 +92,27 @@ def main():
         print("Bark test notification accepted")
         return 0
 
-    items = load_products(args.config)
-    if not items:
+    sources = load_products(args.config)
+    if not sources:
         print("No enabled products; nothing to do")
         return 1
+    items = []
+    discovery_failed = False
+    for source in sources:
+        discover = DISCOVERERS.get(source["adapter"])
+        if discover is None:
+            items.append(source)
+            continue
+        try:
+            discovered = discover(source)
+            items.extend(discovered)
+            print(f"{source['id']}: discovered {len(discovered)} variants")
+        except Exception as exc:
+            discovery_failed = True
+            print(f"{source['id']}: unknown: discovery failed ({type(exc).__name__})")
+    if not items:
+        print("Monitor unhealthy: no products discovered")
+        return 2
     state = load_state(args.state)
     statuses = []
     failures = []
@@ -121,9 +139,9 @@ def main():
             failures.append(item["id"])
             print(f"{item['id']}: notification failed ({type(exc).__name__})")
     if args.dry_run:
-        return 0 if any(s != "unknown" for s in statuses) else 2
+        return 0 if not discovery_failed and any(s != "unknown" for s in statuses) else 2
     save_state(args.state, state)
-    if failures or all(s == "unknown" for s in statuses):
+    if discovery_failed or failures or all(s == "unknown" for s in statuses):
         print("Monitor unhealthy: notification failure or all checks unknown")
         return 2
     try:

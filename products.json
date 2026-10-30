@@ -2,14 +2,11 @@
   "schema_version": 1,
   "products": [
     {
-      "id": "the-row-astra-black-one-size",
+      "id": "the-row-astra-series",
       "brand": "The Row",
-      "name": "Astra Bag",
-      "url": "https://www.therow.com/products/astra-black-ans-1",
-      "adapter": "shopify",
-      "sku": "W2164L117BLANS1SZ",
-      "color": "Black",
-      "size": "One Size",
+      "name": "Astra Series",
+      "url": "https://www.therow.com/search?q=%28title%3Aastra%2A+OR+tag%3Aastra%2A+OR+variants.sku%3Aastra%2A%29&type=product",
+      "adapter": "shopify_search",
       "enabled": true
     }
   ]

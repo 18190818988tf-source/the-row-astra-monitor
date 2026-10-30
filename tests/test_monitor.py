@@ -4,7 +4,7 @@ import unittest
 from pathlib import Path
 from unittest.mock import patch
 
-from adapters.shopify import endpoint, evaluate
+from adapters.shopify import endpoint, evaluate, search_product_urls, variants_from_product
 from config import load_products
 from monitor import update_one, load_state, save_state
 
@@ -53,6 +53,25 @@ class StockCheckTests(unittest.TestCase):
     def test_conflicting_flags(self):
         data = payload(True); data['available'] = False
         self.assertEqual(evaluate(ITEM, data)[0], 'unknown')
+
+    def test_search_product_urls_are_unique_and_same_store(self):
+        search='https://www.therow.com/search?q=astra&type=product'
+        html='''<a href="/products/astra-black?x=1">A</a>
+                <a href="https://www.therow.com/products/astra-black">A2</a>
+                <a href="https://evil.example/products/fake">bad</a>'''
+        self.assertEqual(search_product_urls(search, html),
+                         ['https://www.therow.com/products/astra-black'])
+
+    def test_dynamic_product_expands_all_variants_without_fixed_sku(self):
+        source={"id":"series","brand":"The Row","name":"Astra Series"}
+        data={"handle":"astra-black","title":"Astra Bag in Leather","variants":[
+            {"id":101,"sku":"SKU1","option1":"Black","option2":"One Size","available":False},
+            {"id":102,"sku":"","option1":"Walnut","option2":"One Size","available":True}]}
+        items=variants_from_product(source,'https://www.therow.com/products/astra-black',data)
+        self.assertEqual(len(items),2)
+        self.assertEqual(items[1]['variant_id'],'102')
+        self.assertEqual(items[1]['sku'],'')
+        self.assertEqual(evaluate(items[1],data)[0],'in_stock')
 
 
 class StateTests(unittest.TestCase):
@@ -110,6 +129,14 @@ class ManifestTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as d:
             p=Path(d)/'products.json';p.write_text(json.dumps({'schema_version':1,'products':[dict(ITEM,enabled=False)]}))
             self.assertEqual(load_products(p),[])
+
+    def test_search_source_does_not_require_sku(self):
+        source={"id":"astra-series","brand":"The Row","name":"Astra Series",
+                "url":"https://www.therow.com/search?q=astra&type=product",
+                "adapter":"shopify_search"}
+        with tempfile.TemporaryDirectory() as d:
+            p=Path(d)/'products.json';p.write_text(json.dumps({'schema_version':1,'products':[source]}))
+            self.assertEqual(load_products(p)[0]['adapter'],'shopify_search')
 
 
 if __name__ == '__main__': unittest.main()

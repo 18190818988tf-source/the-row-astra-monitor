@@ -15,9 +15,13 @@ def load_products(path):
     for product in products:
         if not isinstance(product, dict):
             raise ValueError("Each product must be an object")
-        for key in ("id", "brand", "name", "url", "adapter", "sku"):
+        for key in ("id", "brand", "name", "url", "adapter"):
             if not isinstance(product.get(key), str) or not product[key].strip():
                 raise ValueError(f"Product requires a non-empty {key}")
+        if product["adapter"] == "shopify" and (not isinstance(product.get("sku"), str) or not product["sku"].strip()):
+            raise ValueError("Fixed Shopify product requires a non-empty sku")
+        if product["adapter"] == "shopify_search" and urlsplit(product["url"]).path.rstrip("/") != "/search":
+            raise ValueError("Shopify search source URL must use /search")
         if product["id"] in ids:
             raise ValueError(f"Duplicate product id {product['id']}")
         ids.add(product["id"])
