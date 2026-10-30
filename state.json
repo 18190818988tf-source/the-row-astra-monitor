@@ -4,6 +4,82 @@
       "last_reliable": "out_of_stock",
       "notified_in_stock": false,
       "unknown_streak": 0
+    },
+    "the-row-astra-series:astra-black-ans-1:54049836630388": {
+      "last_reliable": "out_of_stock",
+      "notified_in_stock": false,
+      "unknown_streak": 0
+    },
+    "the-row-astra-series:astra-black-ans-2:55276983550324": {
+      "last_reliable": "out_of_stock",
+      "notified_in_stock": false,
+      "unknown_streak": 0
+    },
+    "the-row-astra-series:astra-black-ans-3:54759792607604": {
+      "last_reliable": "out_of_stock",
+      "notified_in_stock": false,
+      "unknown_streak": 0
+    },
+    "the-row-astra-series:astra-bowling-black-ans-3:54759901987188": {
+      "last_reliable": "out_of_stock",
+      "notified_in_stock": false,
+      "unknown_streak": 0
+    },
+    "the-row-astra-series:astra-bowling-black-ans-4:55277008879988": {
+      "last_reliable": "out_of_stock",
+      "notified_in_stock": false,
+      "unknown_streak": 0
+    },
+    "the-row-astra-series:astra-bowling-black-ans:41848784912489": {
+      "last_reliable": "out_of_stock",
+      "notified_in_stock": false,
+      "unknown_streak": 0
+    },
+    "the-row-astra-series:astra-bowling-dark-brown-ans:41848810176617": {
+      "last_reliable": "out_of_stock",
+      "notified_in_stock": false,
+      "unknown_streak": 0
+    },
+    "the-row-astra-series:astra-bowling-walnut-shadow-ans-1:55276980830580": {
+      "last_reliable": "out_of_stock",
+      "notified_in_stock": false,
+      "unknown_streak": 0
+    },
+    "the-row-astra-series:astra-bowling-walnut-shadow-ans-2:56234842030452": {
+      "last_reliable": "out_of_stock",
+      "notified_in_stock": false,
+      "unknown_streak": 0
+    },
+    "the-row-astra-series:astra-bowling-walnut-shadow-ans:54759792476532": {
+      "last_reliable": "out_of_stock",
+      "notified_in_stock": false,
+      "unknown_streak": 0
+    },
+    "the-row-astra-series:astra-dark-brown-ans:54049849606516": {
+      "last_reliable": "out_of_stock",
+      "notified_in_stock": false,
+      "unknown_streak": 0
+    },
+    "the-row-astra-series:astra-milk-ans:55276969427316": {
+      "last_reliable": "out_of_stock",
+      "notified_in_stock": false,
+      "unknown_streak": 0
+    },
+    "the-row-astra-series:astra-pouch-nuez-ans:53788916384116": {
+      "last_notified_utc": "2026-10-30T02:58:45+00:00",
+      "last_reliable": "in_stock",
+      "notified_in_stock": true,
+      "unknown_streak": 0
+    },
+    "the-row-astra-series:astra-walnut-shadow-ans-1:54759792542068": {
+      "last_reliable": "out_of_stock",
+      "notified_in_stock": false,
+      "unknown_streak": 0
+    },
+    "the-row-astra-series:astra-walnut-shadow-ans:55276949930356": {
+      "last_reliable": "out_of_stock",
+      "notified_in_stock": false,
+      "unknown_streak": 0
     }
   },
   "schema_version": 1
