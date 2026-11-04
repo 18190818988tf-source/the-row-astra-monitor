@@ -654,7 +654,7 @@
           "url": "https://outlet.arcteryx.com/us/en/shop/womens/vertex-speed-shoe-9619"
         }
       },
-      "updated_utc": "2026-11-03T22:28:02+00:00"
+      "updated_utc": "2026-11-04T02:35:27+00:00"
     }
   },
   "products": {
@@ -695,8 +695,8 @@
     },
     "the-row-astra-series:astra-black-ans-1:54049836630388": {
       "last_notified_utc": "2026-11-03T22:28:02+00:00",
-      "last_reliable": "in_stock",
-      "notified_in_stock": true,
+      "last_reliable": "out_of_stock",
+      "notified_in_stock": false,
       "unknown_streak": 0
     },
     "the-row-astra-series:astra-black-ans-2:55276983550324": {
