@@ -12,9 +12,6 @@ on:
         required: false
         default: true
         type: boolean
-  schedule:
-    # 5-minute target, NOT guaranteed: GitHub can delay or omit scheduled runs.
-    - cron: '2-59/5 * * * *'
 permissions:
   contents: write
 concurrency:

@@ -1,0 +1,12 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "multi-brand-stock-monitor",
+  "main": "src/worker.js",
+  "compatibility_date": "2026-10-30",
+  "workers_dev": true,
+  "triggers": { "crons": ["* * * * *"] },
+  "kv_namespaces": [
+    { "binding": "MONITOR_STATE", "id": "fc0f62461aee4c0a802cc3f0b9ea479b" }
+  ],
+  "observability": { "enabled": true }
+}

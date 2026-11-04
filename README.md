@@ -1,5 +1,11 @@
 # Multi-brand Stock Monitor（多品牌库存监控中心）
 
+## Cloudflare Worker（每分钟监控）
+
+生产监控由 Cloudflare Worker 以 `* * * * *` 每分钟触发，比较基线存放在 Workers KV。Mac 和 Codex 都不需要保持运行。`BARK_PUSH_URL` 仅保存为 Worker secret，不会提交到仓库；公开的 `/health` 只显示最近一次运行摘要。
+
+部署文件位于 `cloudflare/`。Worker 验证成功后应停用 GitHub Actions 的定时触发，避免重复提醒；手动 dry-run 验证仍可保留。
+
 **One repository, many brands, many products.** The Row Astra source dynamically discovers every product and variant currently listed by the official search page.
 
 > ⚠️ Important: Stock signals are from Shopify's public product JSON, not proof of a completed checkout. The program never logs in, adds products to cart, places orders, or pays. An item being flagged `in_stock` by Shopify is an actionable signal, not an absolute guarantee of website purchase success.
@@ -22,7 +28,7 @@
 - `monitor.py` — scheduler entrypoint, state transitions, Bark push and optional uptime heartbeat
 - `notifications/bark.py` — Bark notification delivery, from `BARK_PUSH_URL` secret
 - `state.json` — persisted stock status across GitHub Actions runs
-- `.github/workflows/stock-monitor.yml` — GitHub Actions trial, every 5 minutes *attempted*
+- `.github/workflows/stock-monitor.yml` — manual GitHub Actions dry-run and Bark test fallback (scheduled runs disabled after the Cloudflare migration)
 - `tests/` — local unit tests, no live stock necessary
 
 ## IMPORTANT: Upload source files, not a ZIP file!

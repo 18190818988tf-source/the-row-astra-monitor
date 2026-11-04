@@ -1,0 +1,13 @@
+{
+  "name": "multi-brand-stock-monitor-worker",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test",
+    "check": "wrangler deploy --dry-run",
+    "deploy": "wrangler deploy"
+  },
+  "devDependencies": {
+    "wrangler": "^4.45.0"
+  }
+}
